@@ -22,41 +22,41 @@ Learn TypeScript essentials and apply them to a real Next.js project.
 
 ## 📂 Folder Structure
 
+```
 chapter-01-typescript-foundations/
 │
-├── README.md ← This file
+├── README.md                              ← This file
 │
-├── concepts/ ← Learning files
-│ ├── 01-basic-types.ts
-│ ├── 01b-basic-types-in-page.tsx
-│ ├── 02-interfaces.ts
-│ ├── 02b-interfaces-in-page.tsx
-│ ├── 03-union-types.ts
-│ ├── 03b-union-types-in-page.tsx
-│ ├── 04-generics.ts
-│ ├── 04b-generics-in-page.tsx
-│ ├── 05-async-await.ts
-│ ├── 05b-async-in-page.tsx
-│ ├── 05c-fetch-users.ts
-│ ├── 05c-fetch-users-in-page.tsx
-│ ├── 05d-fetch-users-display.tsx
-│ ├── 06-typing-props.tsx
-│ ├── 06b-typing-props-optional.tsx
-│ ├── 06c-typing-props-default.tsx
-│ ├── 06d-typing-props-children.tsx
-│ ├── 07-typing-state.tsx
-│ └── 07b-typing-state-array.tsx
+├── concepts/                              ← Learning files
+│   ├── 01-basic-types.ts
+│   ├── 01b-basic-types-in-page.tsx
+│   ├── 02-interfaces.ts
+│   ├── 02b-interfaces-in-page.tsx
+│   ├── 03-union-types.ts
+│   ├── 03b-union-types-in-page.tsx
+│   ├── 04-generics.ts
+│   ├── 04b-generics-in-page.tsx
+│   ├── 05-async-await.ts
+│   ├── 05b-async-in-page.tsx
+│   ├── 05c-fetch-users.ts
+│   ├── 05c-fetch-users-in-page.tsx
+│   ├── 05d-fetch-users-display.tsx
+│   ├── 06-typing-props.tsx
+│   ├── 06b-typing-props-optional.tsx
+│   ├── 06c-typing-props-default.tsx
+│   ├── 06d-typing-props-children.tsx
+│   ├── 07-typing-state.tsx
+│   └── 07b-typing-state-array.tsx
 │
-└── mini-project/ ← User Directory app
-├── DEMO-SCRIPT.html ← Presentation script (styled HTML)
-├── VIDEO-SCRIPT.html ← Video recording script
-└── reference-files/ ← Backup copy of live code
-├── home.tsx ← Home page reference
-├── page.tsx ← Main app page
-├── types.ts ← User interface
-├── UserCard.tsx ← Single user card
-├── UserList.tsx ← List of users
-└── UserStats.tsx ← Stats box
+└── mini-project/                          ← User Directory app
+    └── reference-files/                   ← Backup copy of live code
+        ├── home.tsx
+        ├── page.tsx
+        ├── types.ts
+        ├── UserCard.tsx
+        ├── UserList.tsx
+        └── UserStats.tsx
+```
 
 ---
 
@@ -77,7 +77,9 @@ A typed CRUD app built with **Next.js 16**, **TypeScript**, and **Tailwind CSS**
 
 After running `npm run dev`, visit:
 
+```
 http://localhost:3000/chapter-01
+```
 
 ### Files
 
@@ -88,6 +90,18 @@ http://localhost:3000/chapter-01
 | `app/chapter-01/UserCard.tsx`  | Displays one user + Remove button     |
 | `app/chapter-01/UserList.tsx`  | Loops through users, renders cards    |
 | `app/chapter-01/UserStats.tsx` | Reusable stats box                    |
+
+---
+
+## 🎬 Video Demo
+
+A 3-minute walkthrough explaining how the User Directory works and why I built it this way.
+
+**📺 Watch:** _(link coming soon — will be added after recording)_
+
+### Recording Notes
+
+Recorded with **Zoom** → uploaded to **YouTube** → shared on **LinkedIn**.
 
 ---
 
@@ -110,21 +124,6 @@ http://localhost:3000/chapter-01
 
 ---
 
-## 🎬 Demo & Presentation
-
-This chapter includes two HTML scripts for portfolio presentation:
-
-| File                    | Purpose                                           |
-| ----------------------- | ------------------------------------------------- |
-| **`DEMO-SCRIPT.html`**  | Written script — what to say, what to click       |
-| **`VIDEO-SCRIPT.html`** | Visual storyboard — HOOK → SHOW → EXPLAIN → CLOSE |
-
-**To view:** double-click either `.html` file — it opens in your browser, beautifully styled.
-
-**To export:** press `Ctrl + P` → Save as PDF.
-
----
-
 ## 📖 How to Use This Chapter
 
 ### Study the concepts
@@ -142,13 +141,6 @@ Read each file in `concepts/` in order. Each one has:
 2. Run `npm run dev`
 3. Visit `http://localhost:3000/chapter-01`
 
-### Present your work
-
-1. Open `VIDEO-SCRIPT.html`
-2. Practice the HOOK → SHOW → EXPLAIN → CLOSE flow
-3. Record a 3-minute video
-4. Post on LinkedIn, YouTube, GitHub
-
 ---
 
 ## ✅ Chapter Checklist
@@ -156,9 +148,7 @@ Read each file in `concepts/` in order. Each one has:
 - [x] All 7 concepts studied
 - [x] 20+ reference files created
 - [x] Mini project built (User Directory)
-- [x] Demo script written
-- [x] Video script written
-- [x] GitHub pushed
+- [ ] Video demo recorded and linked
 
 ---
 
