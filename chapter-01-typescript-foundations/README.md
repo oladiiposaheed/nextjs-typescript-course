@@ -6,6 +6,36 @@ Learn TypeScript essentials and apply them to a real Next.js project.
 
 ---
 
+## 🎯 Mini Project — TeamHub
+
+**TeamHub** is a small **team management dashboard** that lets you add, search, and remove team members with full TypeScript type safety.
+
+### Purpose
+
+In simple terms, TeamHub helps you keep track of your team members. Instead of writing names and details in a notebook or spreadsheet, you use a clean web app that:
+
+- Adds new members with one click
+- Searches for members by name as you type
+- Removes members instantly
+- Shows live counts of how many are active and inactive
+
+### Why I Built It
+
+I built TeamHub to **master TypeScript fundamentals** inside a real Next.js app. Every prop, state, and function is fully typed — which means TypeScript catches my mistakes while I code, not when the app breaks for users.
+
+### What It Demonstrates
+
+| Goal                        | How                                            |
+| --------------------------- | ---------------------------------------------- |
+| Learn TypeScript interfaces | The `User` type defines every member's shape   |
+| Learn typed props           | Every component receives typed data            |
+| Learn typed state           | `useState<User[]>` knows exactly what it holds |
+| Learn CRUD operations       | Create, Read, Delete members                   |
+| Learn data flow             | Page → List → Card pattern                     |
+| Learn Next.js App Router    | File-based routing with `/chapter-01`          |
+
+---
+
 ## 🎯 What You'll Learn
 
 | #   | Concept      | File                           |
@@ -48,7 +78,7 @@ chapter-01-typescript-foundations/
 │   ├── 07-typing-state.tsx
 │   └── 07b-typing-state-array.tsx
 │
-└── mini-project/                          ← User Directory app
+└── mini-project/                          ← TeamHub app
     └── reference-files/                   ← Backup copy of live code
         ├── home.tsx
         ├── page.tsx
@@ -60,48 +90,24 @@ chapter-01-typescript-foundations/
 
 ---
 
-## 🛠️ Mini Project — User Directory
+## 🛠️ Features
 
-A typed CRUD app built with **Next.js 16**, **TypeScript**, and **Tailwind CSS**.
+| Feature                | Description                                           |
+| ---------------------- | ----------------------------------------------------- |
+| 📊 **Stats Dashboard** | Live counts of Total, Active, and Inactive members    |
+| 🔍 **Search**          | Filter members by name as you type (case-insensitive) |
+| ➕ **Add Member**      | Name, email, role dropdown, active checkbox           |
+| ❌ **Remove Member**   | One-click removal from the list                       |
 
-### Features
+---
 
-| Feature            | Description                                    |
-| ------------------ | ---------------------------------------------- |
-| 📊 **Stats**       | Total / Active / Inactive counts — update live |
-| 🔍 **Search**      | Filter users by name (case-insensitive)        |
-| ➕ **Add User**    | Name, email, role dropdown, active checkbox    |
-| ❌ **Remove User** | One-click remove from the list                 |
-
-### Live URL
+## 🚀 Live URL
 
 After running `npm run dev`, visit:
 
 ```
 http://localhost:3000/chapter-01
 ```
-
-### Files
-
-| File                           | Purpose                               |
-| ------------------------------ | ------------------------------------- |
-| `app/chapter-01/page.tsx`      | Main page — holds all state and logic |
-| `app/chapter-01/types.ts`      | The `User` interface                  |
-| `app/chapter-01/UserCard.tsx`  | Displays one user + Remove button     |
-| `app/chapter-01/UserList.tsx`  | Loops through users, renders cards    |
-| `app/chapter-01/UserStats.tsx` | Reusable stats box                    |
-
----
-
-## 🎬 Video Demo
-
-A 3-minute walkthrough explaining how the User Directory works and why I built it this way.
-
-**📺 Watch:** _(link coming soon — will be added after recording)_
-
-### Recording Notes
-
-Recorded with **Zoom** → uploaded to **YouTube** → shared on **LinkedIn**.
 
 ---
 
@@ -124,18 +130,7 @@ Recorded with **Zoom** → uploaded to **YouTube** → shared on **LinkedIn**.
 
 ---
 
-## 📖 How to Use This Chapter
-
-### Study the concepts
-
-Read each file in `concepts/` in order. Each one has:
-
-- A concept explanation
-- Working code
-- Comments on every line
-- A Next.js page version
-
-### Build the mini project
+### Build TeamHub
 
 1. Copy the reference files into `app/chapter-01/`
 2. Run `npm run dev`
@@ -143,11 +138,23 @@ Read each file in `concepts/` in order. Each one has:
 
 ---
 
+## 🎬 Video Demo
+
+A 3-minute walkthrough explaining how TeamHub works and why I built it this way.
+
+**📺 Watch:** _(link coming soon)_
+
+### Recording Notes
+
+Recorded with **Zoom** → uploaded to **YouTube** → shared on **LinkedIn**.
+
+---
+
 ## ✅ Chapter Checklist
 
 - [x] All 7 concepts studied
 - [x] 20+ reference files created
-- [x] Mini project built (User Directory)
+- [x] TeamHub mini project built
 - [ ] Video demo recorded and linked
 
 ---
