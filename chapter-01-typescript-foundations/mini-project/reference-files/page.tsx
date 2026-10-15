@@ -26,8 +26,10 @@ export default function UserDirectoryPage() {
 
     // State: Text in the name, email and search inputs 
     const [newName, setNewName] = useState<string>('');
-    const [newEmail, setNewEmail] = useState<string>('')
-    const [searchTerm, setSearchTerm] = useState<string>('')
+    const [newEmail, setNewEmail] = useState<string>('');
+    const [searchTerm, setSearchTerm] = useState<string>('');
+    const [newRole, setNewRole] = useState<'admin' | 'user' | 'guest'>('user');
+    const [newIsActive, setNewIsActive] = useState<boolean>(true);
 
     // Function to add a new user
     const addUser = () => {
@@ -40,8 +42,8 @@ export default function UserDirectoryPage() {
             id: users.length + 1,
             name: newName,
             email: newEmail,
-            role: 'user',      // Default role
-            isActive: true     // New users start active
+            role: newRole,      
+            isActive: newIsActive     
         };
 
         // Add to the array (immutable)
@@ -50,6 +52,8 @@ export default function UserDirectoryPage() {
         // Clear the inputs
         setNewName('');
         setNewEmail('');
+        setNewRole('user');
+        setNewIsActive(true);
     };
 
     // Function to remove a user by ID
@@ -105,6 +109,24 @@ export default function UserDirectoryPage() {
                     placeholder="Email"
                     className="border p-2 rounded"    
                 />
+                <select 
+                    value={newRole}
+                    onChange={(e) => setNewRole(e.target.value as 'admin' | 'user' | 'guest')}
+                    className="border p-2 rounded"
+                >
+                    <option value="user">User</option>
+                    <option value="admin">Admin</option>
+                    <option value="guest">Guest</option>
+
+                </select>
+                <label className="flex items-center gap-2 text-sm">
+                    <input 
+                        type="checkbox" 
+                        checked={newIsActive}
+                        onChange={(e) => setNewIsActive(e.target.checked)}
+                    />
+                    Active
+                </label>
                 <button 
                     onClick={addUser}
                     className="bg-blue-600 text-white px-4 py-2 rounded"
