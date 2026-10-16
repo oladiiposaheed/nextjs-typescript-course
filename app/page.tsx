@@ -17,7 +17,7 @@ export default function HomePage() {
       <ul className="space-y-2">
         <li>
           <Link href="/chapter-01" className="text-blue-600 hover:underline">
-            📘 Chapter 1 — User Directory
+            📘 Chapter 1 — TeamHub
           </Link>
         </li>
       </ul>

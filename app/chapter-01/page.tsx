@@ -73,7 +73,8 @@ export default function UserDirectoryPage() {
 
     return (
         <div className="p-8">
-            <h1 className="text-2xl font-bold mb-4">User Directory</h1>
+            <h1 className="text-2xl font-bold mb-4">TeamHub</h1>
+            <p className="text-gray-600 mb-6">Manage your team with type safety</p>
 
             {/* Stats row */}
             <div>
