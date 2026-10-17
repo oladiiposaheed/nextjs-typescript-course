@@ -1,10 +1,15 @@
+// Async because we must await params
 export default async function DocsPage({
   params,
 }: {
+  // Type: Promise that contains { slug: string[] }  
   params: Promise<{ slug: string[] }>;
 }) {
+  
+  // Await → get the real object, then extract slug array  
   const { slug } = await params;
 
+  // slug is now: ['react', 'hooks'] (for /docs/react/hooks)
   return (
     <div className="p-8">
       <h1 className="text-2xl font-bold mb-4">Docs Page</h1>
