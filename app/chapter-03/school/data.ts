@@ -2,7 +2,7 @@
 
 import { Student } from "./types";
 
-export const students: Student[] = [
+export const initialstudents: Student[] = [
     {
     id: 1,
     firstName: 'Fatimah',
@@ -124,3 +124,21 @@ export const students: Student[] = [
     gender: 'Male',
   },
 ];
+
+//  Helper function to get students
+export function getStudents(): Student[] {
+
+  // If running on the server, just return the initial data
+  if (typeof window === 'undefined')
+    return initialstudents;
+
+  const saved = localStorage.getItem('scholarhub_students');
+  return saved ? JSON.parse(saved) : initialstudents;
+}
+
+// Helper function to save students
+export function saveStudents(newStudents: Student[]) {
+  if (typeof window !== 'undefined') {
+    localStorage.setItem('scholarhub_students', JSON.stringify(newStudents));
+  }
+}
