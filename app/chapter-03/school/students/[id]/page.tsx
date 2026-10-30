@@ -1,14 +1,16 @@
-'use client'; // 👈 1. Make it a Client Component
+'use client'; // Client Component
 
 import { useState, useEffect } from 'react';
-import { useParams } from 'next/navigation'; // 👈 2. Use useParams instead of async/await
-import Link from 'next/link';
+import { useParams, useRouter, notFound } from 'next/navigation'; 
 import Image from 'next/image';
-import { getStudents } from '../../data'; // 👈 3. Import getStudents
+import Link from 'next/link';
+import { getStudents, saveStudents } from '../../data'; 
 import { Student } from '../../types';
+
 
 export default function StudentDetailPage() {
   const params = useParams(); // Get the ID from the URL
+  const router = useRouter();
   const id = params.id as string;
 
   const [student, setStudent] = useState<Student | null>(null);
@@ -25,30 +27,32 @@ export default function StudentDetailPage() {
     setLoading(false);
   }, [id]);
 
+  // Delete function
+  const handleDelete = () => {
+    if (confirm('Are you sure you want to delete this student?')) {
+        const allStudents = getStudents();
+        const updatedStudents = allStudents.filter((s) => s.id !== Number(id));
+        saveStudents(updatedStudents);
+        router.push('/chapter-03/school/students')
+    }
+  };
+
   if (loading) {
     return <div className="min-h-screen bg-slate-950 p-8 text-white">Loading...</div>;
   }
 
-  if (!student) {
-    return (
-      <div className="min-h-screen bg-slate-950 flex items-center justify-center p-8">
-        <div className="max-w-md w-full text-center">
-          <h1 className="text-3xl font-bold text-white mb-4">
-            Student not found
-          </h1>
-          <p className="text-gray-400 mb-8">
-            We couldn't find a student with ID {id}.
-          </p>
-          <Link
-            href="/chapter-03/school/students"
-            className="inline-block bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700 transition-colors"
-          >
-            ← Back to Students
-          </Link>
-        </div>
-      </div>
-    );
+  // If no student was found after loading, trigger the 404 page
+  if(!loading && !student) {
+    notFound();
   }
+
+  // If still loading, show a loader
+  if (loading) {
+    return <div className='min-h-screen bg-slate-950 p-8 text-white'>
+        Loading...
+    </div>
+  }
+
 
   return (
     <div className="min-h-screen bg-slate-950 p-6 sm:p-8">
@@ -104,6 +108,22 @@ export default function StudentDetailPage() {
             <div className="mt-6 p-4 bg-slate-950 border border-slate-800 rounded-xl flex justify-between items-center">
               <span className="text-sm text-gray-400">Student ID</span>
               <span className="font-mono font-bold text-gray-200">#{student.id}</span>
+            </div>
+
+            {/* Edit&Delete Button */}
+            <div className='mt-6 flex justify-end gap-3'>
+                <Link
+                    href={`/chapter-03/school/students/${student?.id}/edit`}
+                    className='bg-indigo-600/10 text-indigo-400 border border-indigo-900/50 hover:bg-indigo-600 hover:text-white px-4 py-2 rounded-lg transition-colors text-sm font-medium'
+                >
+                    Edit Student
+                </Link>
+                <button
+                    onClick={handleDelete}
+                    className='bg-red-600/10 text-rose-400 border border-red-900/50 hover:bg-red-600 hover:text-white px-4 py-2 rounded-lg transition-colors text-sm font-medium'
+                >
+                    Delete Student
+                </button>
             </div>
           </div>
 

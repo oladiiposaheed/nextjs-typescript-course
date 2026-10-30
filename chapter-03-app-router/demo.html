@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ScholarHub - Phase 2 Demo</title>
+<style>
+  body { font-family: 'Segoe UI', sans-serif; background: #020617; color: #f8fafc; padding: 40px; line-height: 1.6; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { color: #818cf8; font-size: 32px; margin-bottom: 20px; text-align: center; }
+  .card { background: #0f172a; border: 1px solid #334155; border-radius: 12px; padding: 20px 30px; margin-bottom: 20px; }
+  .time { display: inline-block; background: #312e81; color: #c7d2fe; padding: 4px 12px; border-radius: 6px; font-size: 12px; font-weight: bold; margin-bottom: 10px; }
+  .action { color: #fca5a5; font-weight: bold; text-transform: uppercase; font-size: 14px; letter-spacing: 1px; margin-bottom: 10px; }
+  .say { font-size: 20px; color: #e2e8f0; border-left: 4px solid #6366f1; padding-left: 15px; }
+  code { background: #1e293b; color: #fda4af; padding: 2px 6px; border-radius: 4px; }
+  .highlight { color: #fbbf24; font-weight: bold; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>The 60-Second Demo (Phase 2)</h1>
+
+  <div class="card">
+    <span class="time">0:00 - 0:20</span>
+    <div class="action">Show the Form UI</div>
+    <div class="say">
+      "In Phase 2, I added the <strong>Add Student Form</strong>. I used <strong>Chapter 2 concepts</strong> like controlled inputs and form state. The form is fully responsive and matches the dark theme."
+    </div>
+  </div>
+
+  <div class="card">
+    <span class="time">0:20 - 0:40</span>
+    <div class="action">Try to submit an empty form</div>
+    <div class="say">
+      "If I try to submit without filling the fields, <strong>React state</strong> catches it and shows red validation errors under each input."
+    </div>
+  </div>
+
+  <div class="card">
+    <span class="time">0:40 - 1:00</span>
+    <div class="action">Fill out the form and Submit</div>
+    <div class="say">
+      "When I fill it out and submit, the data is saved to <strong>localStorage</strong>. It redirects me back to the list, and the new student appears instantly. The data persists even if I refresh the page."
+    </div>
+  </div>
+
+  <div class="card" style="border: 2px dashed #818cf8;">
+    <div class="action">🧠 Key Thing to Say</div>
+    <div class="say">
+      "This proves I can handle <strong>complex form state</strong>, <strong>validation</strong>, and <strong>data persistence</strong> using modern Next.js and TypeScript."
+    </div>
+  </div>
+</div>
+</body>
+</html>
