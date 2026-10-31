@@ -26,18 +26,37 @@
 //     </html>
 //   );
 // }
-import type { Metadata } from "next";
-import './globals.css';
+// import type { Metadata } from "next";
+// import './globals.css';
 
-export const metadata: Metadata = {
-  title: 'ScholarHub',
-  description: 'School management dashboard',
-};
+// export const metadata: Metadata = {
+//   title: 'ScholarHub',
+//   description: 'School management dashboard',
+// };
 
-export default function RootLayout({ children }: LayoutProps<'/'>) {
+// export default function RootLayout({ children }: LayoutProps<'/'>) {
+//   return (
+//     <html lang="en">
+//       <body>{children}</body>
+//     </html>
+//   );
+// }
+
+import { Roboto } from 'next/font/google'; 
+
+//  Configure it
+const roboto = Roboto({
+  weight: ['400', '700'], // Normal and Bold
+  subsets: ['latin'],
+});
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      {/* Apply it to the body */}
+      <body className={roboto.className}>
+        {children}
+      </body>
     </html>
   );
 }
